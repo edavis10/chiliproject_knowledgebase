@@ -15,3 +15,4 @@ Redmine::Plugin.register :chiliproject_knowledgebase do
            })
 end
 require 'chiliproject_knowledgebase/hooks/view_issues_history_journal_bottom_hook'
+require 'chiliproject_knowledgebase/hooks/view_layouts_base_html_head_hook'
