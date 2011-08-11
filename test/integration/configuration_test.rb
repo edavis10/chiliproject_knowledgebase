@@ -27,7 +27,7 @@ class ConfigurationTest < ActionController::IntegrationTest
     select @project.name, :from => 'Project'
     click_button 'Apply'
 
-    assert_equal @project, ChiliProjectKnowledgebase::Configuration.project
+    assert_equal @project, ChiliprojectKnowledgebase::Configuration.project
   end
 
 end

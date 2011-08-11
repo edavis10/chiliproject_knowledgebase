@@ -1,4 +1,4 @@
-module ChiliProjectKnowledgebase
+module ChiliprojectKnowledgebase
   class Configuration
 
     def self.settings
