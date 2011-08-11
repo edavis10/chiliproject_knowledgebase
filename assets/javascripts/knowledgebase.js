@@ -8,15 +8,20 @@
 
     registerKnowledgeBaseAddLightbox: function() {
       $('.knowledgebase-lightbox').live('click', function() {
+        var journalId = $(this).attr('id').split('-').last();
+
         $('#dialog-window').
           hide().
           html('').
-          load('/issues/91.json').
+          load('/knowledge_bases/new?format=js&journal_id=' + journalId).
           dialog({
             title: "Add Knowledge Base Content",
             minWidth: 400,
-            width: 800,
+            width: 850,
             buttons: {
+              "Submit": function() {
+                alert('TODO: Need to save');
+              },
               "Cancel": function() {
                 $(this).dialog("close");
               }

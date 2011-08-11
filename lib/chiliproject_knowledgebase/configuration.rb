@@ -14,5 +14,9 @@ module ChiliprojectKnowledgebase
         Project.find(project_id)
       end
     end
+
+    def self.project?
+      project_id.present? && Project.find_by_id(project_id)
+    end
   end
 end

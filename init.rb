@@ -1,3 +1,7 @@
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular 'knowledge_base', 'knowledge_bases'
+end
+
 require 'redmine'
 
 Redmine::Plugin.register :chiliproject_knowledgebase do

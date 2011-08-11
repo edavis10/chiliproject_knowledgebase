@@ -93,7 +93,7 @@ end
 class ActionController::IntegrationTest
   include ChiliProjectIntegrationTestHelper
   include KnowledgebaseIntegrationTestHelper
-  include Capybara
+  include Capybara::DSL
   
 end
 
@@ -105,11 +105,11 @@ class ActiveSupport::TestCase
 
   def configure_plugin(configuration_change={})
     Setting.plugin_chiliproject_knowledgebase = {
-      
+      'project_id' => ''
     }.merge(configuration_change)
   end
 
   def reconfigure_plugin(configuration_change)
-    Settings['plugin_chiliproject_knowledgebase'] = Setting['plugin_chiliproject_knowledgebase'].merge(configuration_change)
+    Setting['plugin_chiliproject_knowledgebase'] = Setting['plugin_chiliproject_knowledgebase'].merge(configuration_change.stringify_keys)
   end
 end
