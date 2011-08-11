@@ -1,10 +1,16 @@
 require 'redmine'
 
 Redmine::Plugin.register :chiliproject_knowledgebase do
-  name 'Chiliproject Knowledgebase plugin'
-  author 'Author name'
-  description 'This is a plugin for ChiliProject'
-  version '0.0.1'
-  url 'http://example.com/path/to/plugin'
-  author_url 'http://example.com/about'
+  name 'Knowledgebase'
+  author 'Eric Davis of Little Stream Software'
+  description 'An easy way to capture knowledge you are already creating in ChiliProject/Redmine and make it easier to discover and share.'
+  url 'https://projects.littlestreamsoftware.com/projects/chiliproject_knowledgebase'
+  author_url 'http://www.littlestreamsoftware.com'
+
+  version '0.1.0'
+
+  settings(:partial => 'settings/knowledgebase',
+           :default => {
+             :project_id => ''
+           })
 end

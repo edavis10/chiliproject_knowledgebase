@@ -75,9 +75,24 @@ module ChiliProjectIntegrationTestHelper
 
 end
 
+module KnowledgebaseIntegrationTestHelper
+  def visit_configuration_panel
+    visit_home
+    click_link 'Administration'
+    assert_response :success
+
+    click_link 'Plugins'
+    assert_response :success
+
+    click_link 'Configure'
+    assert_response :success
+  end
+  
+end
+
 class ActionController::IntegrationTest
   include ChiliProjectIntegrationTestHelper
-  
+  include KnowledgebaseIntegrationTestHelper
   include Capybara
   
 end

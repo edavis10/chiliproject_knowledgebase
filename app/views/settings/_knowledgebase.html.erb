@@ -1,0 +1,9 @@
+<% selected_project = ChiliProjectKnowledgebase::Configuration.project %>
+
+<p>
+  <label for="settings_project_id"><%= l(:label_project) %></label>
+  <%= select_tag('settings[project_id]',
+                 options_for_select([[l(:label_none),'']]) +
+                 project_tree_options_for_select(Project.active, {:selected => selected_project}))
+                 %>
+</p>
