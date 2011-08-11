@@ -1,3 +1,2 @@
-# English strings go here for Rails i18n
 en:
-  my_label: "My label"
+  text_knowledgebase_help: "Choose the project where knowledgebase posts will be saved to. Users will need access to this project's forums in order to create a knowledgebase post and to read past posts."

@@ -1,5 +1,7 @@
 <% selected_project = ChiliProjectKnowledgebase::Configuration.project %>
 
+<p><%= l(:text_knowledgebase_help) %></p>
+
 <p>
   <label for="settings_project_id"><%= l(:label_project) %></label>
   <%= select_tag('settings[project_id]',
