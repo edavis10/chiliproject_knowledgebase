@@ -20,7 +20,7 @@
             width: 850,
             buttons: {
               "Submit": function() {
-                alert('TODO: Need to save');
+                $('#knowledgebase-form').submit();
               },
               "Cancel": function() {
                 $(this).dialog("close");
@@ -32,9 +32,42 @@
       });
     },
 
+    registerKnowledgeBaseAddForm: function() {
+      $('#knowledgebase-form').live('submit', function() {
+        $('#knowledgebase-errors').hide().html('');
+
+        $(this).ajaxSubmit({
+          dataType: 'json',
+          success: function(data, textStatus, xhr) {
+            var messageUrl = xhr.getResponseHeader('Location');
+            $('#knowledgebase-form').
+              html('<div class="flash notice">Knowledge base post created at <a href="' + messageUrl + '">' + messageUrl +'</a>.</div>');
+
+            // Change buttons
+            $('#dialog-window').dialog({ buttons: {
+              "Close": function() {
+                $(this).dialog("close");
+              }}});
+
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            var errors = $.parseJSON(jqXHR.responseText);
+            $.each(errors.errors, function(index, value) {
+              $('#knowledgebase-errors').append(value + "<br />");
+            });
+            $('#knowledgebase-errors').show();
+          }
+
+        });
+
+        return false;
+      });
+    },
+
     initialize: function() {
       this.registerAjaxIndicator();
       this.registerKnowledgeBaseAddLightbox();
+      this.registerKnowledgeBaseAddForm();
     }
   };
 

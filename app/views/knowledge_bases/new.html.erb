@@ -1,12 +1,14 @@
 <div>
+  <div id="knowledgebase-errors" class="flash error" style="display:none;"></div>
 
 <% if User.current.allowed_to?(:add_messages, ChiliprojectKnowledgebase::Configuration.project) %>
   <% labelled_tabular_form_for(:knowledge_base, @knowledge_base, :url => knowledge_bases_url, :html => {:id => 'knowledgebase-form'}) do |f| %>
+    <%= f.hidden_field :source_id %>
 
     <p><%= f.text_field :name, :required => true %></p>
 	  <p><%= f.select :board_id, ChiliprojectKnowledgebase::Configuration.project.boards.collect {|b| [b.name, b.id]}, :required => true, :label => :label_knowledgebase_category %></p>
     <p><%= f.text_area :description, :size => 80, :rows => 10, :cols => 80, :required => true %></p>
-    <p><%= f.text_field :tags, :required => true, :label => :label_knowledgebase_tags %></p>
+    <p><%= f.text_field :tags, :label => :label_knowledgebase_tags %></p>
 <% end %>
 <% end %>
 

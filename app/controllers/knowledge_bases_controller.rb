@@ -5,7 +5,7 @@ class KnowledgeBasesController < ApplicationController
   before_filter :find_journal
   
   def new
-    @knowledge_base = KnowledgeBase.new
+    @knowledge_base = KnowledgeBase.new(:source_type => 'issue', :source_id => @issue.id)
     @knowledge_base.description = @journal.notes if @journal.present?
     render :layout => false
   end
