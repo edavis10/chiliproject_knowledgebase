@@ -2,3 +2,4 @@ en:
   text_knowledgebase_help: "Choose the project where knowledgebase posts will be saved to. Users will need access to this project's forums in order to create a knowledgebase post and to read past posts."
   label_knowledgebase_category: "Category"
   label_knowledgebase_tags: "Tags (comma separated)"
+  field_board: Board

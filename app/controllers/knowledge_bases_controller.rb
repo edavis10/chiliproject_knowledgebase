@@ -11,6 +11,18 @@ class KnowledgeBasesController < ApplicationController
   end
 
   def create
+    @knowledge_base = KnowledgeBase.new(params[:knowledge_base])
+    @message = @knowledge_base.to_message
+
+    respond_to do |format|
+      if @message.save
+        format.js { render :json => @message, :layout => false, :status => :created, :location => url_for(:controller => 'messages', :action => 'show', :board_id => @message.board_id, :id => @message.id) }
+      else
+        format.js { render :json => {:errors => @message.errors.full_messages}, :layout => false, :status => :unprocessable_entity}
+      end
+    end
+    
+    
   end
 
   private
