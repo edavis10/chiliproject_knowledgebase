@@ -4,7 +4,8 @@ An easy way to capture knowledge you are already creating in ChiliProject/Redmin
 
 == Features
 
-TODO: fill in features
+* Lets you use a set of forums as a knowledgebase.
+* Lets you convert an issue note to a forum thread without leaving the issue page
 
 == Getting the plugin
 
@@ -14,10 +15,13 @@ A copy of the plugin can be downloaded from {Little Stream Software}[https://pro
 == Installation and Setup
 
 1. Follow the ChiliProject plugin installation steps at: https://www.chiliproject.org/projects/chiliproject/wiki/Plugin_Install
+2. Configure which project to store the Knowledge Base, in Admin > Plugins > Configure
+3. Set up the Boards module in the project for the Knowledge Base
+4. Make sure users are given permission to "Add Messages" to the Knowledge Base project
 
 == Usage
 
-TODO: Add usage
+When viewing an issue, click the icon next to each note to add a knowledge base post. A form will appear for you to fil out and change any of the details before posting.
 
 == License
 
