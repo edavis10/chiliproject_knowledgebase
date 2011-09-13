@@ -3,6 +3,10 @@
 <p><%= l(:text_knowledgebase_help) %></p>
 
 <p>
+  <label for="settings_introduction_text"><%= l(:text_knowledgebase_introduction_text) %></label>
+  <%= text_area_tag('settings[introduction_text]', ChiliprojectKnowledgebase::Configuration.introduction_text, :rows => 5, :cols => 80) %>
+</p>
+<p>
   <label for="settings_project_id"><%= l(:label_project) %></label>
   <%= select_tag('settings[project_id]',
                  options_for_select([[l(:label_none),'']]) +

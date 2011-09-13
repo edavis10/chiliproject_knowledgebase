@@ -4,3 +4,4 @@ en:
   label_knowledgebase_tags: "Tags (comma separated)"
   field_board: Board
   text_knowledgebase_add: "Add a new knowledge base post"
+  text_knowledgebase_introduction_text: "Introduction text"

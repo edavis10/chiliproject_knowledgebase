@@ -105,7 +105,8 @@ class ActiveSupport::TestCase
 
   def configure_plugin(configuration_change={})
     Setting.plugin_chiliproject_knowledgebase = {
-      'project_id' => ''
+      'project_id' => '',
+      'introduction_text' => ''
     }.merge(configuration_change)
   end
 

@@ -4,7 +4,7 @@ class KnowledgeBasesTest < ActionController::IntegrationTest
   def setup
     @user = User.generate!(:password => 'test', :password_confirmation => 'test').reload
     @project = Project.generate!.reload
-    configure_plugin('project_id' => @project.id)
+    configure_plugin('project_id' => @project.id, 'introduction_text' => "Welcome to the knowledgebase test")
     @issue = Issue.generate_for_project!(@project)
     @issue.init_journal(@user, "An update note")
     assert_difference("Journal.count") do
@@ -25,6 +25,10 @@ class KnowledgeBasesTest < ActionController::IntegrationTest
       
       should "render an html snippet" do
         assert find('div')
+      end
+
+      should "render the introduction text" do
+        assert has_content?("Welcome to the knowledgebase test")
       end
       
       should "have a form that posts to the KnowledgeBase" do

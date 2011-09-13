@@ -15,7 +15,8 @@ Redmine::Plugin.register :chiliproject_knowledgebase do
 
   settings(:partial => 'settings/knowledgebase',
            :default => {
-             :project_id => ''
+             :project_id => '',
+             :introduction_text => ''
            })
 end
 require 'chiliproject_knowledgebase/hooks/view_issues_history_journal_bottom_hook'

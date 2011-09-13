@@ -1,6 +1,8 @@
 <div>
   <div id="knowledgebase-errors" class="flash error" style="display:none;"></div>
 
+  <div id="knowledgebase-introduction"><%= h(ChiliprojectKnowledgebase::Configuration.introduction_text.to_s) %></div>
+
 <% if User.current.allowed_to?(:add_messages, ChiliprojectKnowledgebase::Configuration.project) %>
   <% labelled_tabular_form_for(:knowledge_base, @knowledge_base, :url => knowledge_bases_url, :html => {:id => 'knowledgebase-form'}) do |f| %>
     <%= f.hidden_field :source_id %>
