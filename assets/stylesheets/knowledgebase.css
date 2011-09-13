@@ -1,0 +1,39 @@
+.knowledgebase .ui-widget-header {
+   background-color: #277D94;
+   color: #FFFFFF;
+   font-weight: bold;
+   margin: -1px;
+   font-size: 1.1em;
+}
+.knowledgebase.ui-dialog {
+   overflow: hidden;
+   padding: 0;
+   position: absolute;
+   width: 300px;
+}
+.knowledgebase.ui-dialog .ui-dialog-title {
+   padding-top: 0.6em;
+}
+.knowledgebase .ui-corner-all, .knowledgebase .ui-corner-bottom, .knowledgebase .ui-corner-right, .knowledgebase .ui-corner-br {
+   border-bottom-right-radius: 0;
+}
+/* jquery...3175030 (line 286) */
+.knowledgebase .ui-corner-all, .knowledgebase .ui-corner-bottom, .knowledgebase .ui-corner-left, .knowledgebase .ui-corner-bl {
+   border-bottom-left-radius: 0;
+}
+/* jquery...3175030 (line 285) */
+.knowledgebase .ui-corner-all, .knowledgebase .ui-corner-top, .knowledgebase .ui-corner-right, .knowledgebase .ui-corner-tr {
+   border-top-right-radius: 4px;
+}
+/* jquery...3175030 (line 284) */
+.knowledgebase .ui-corner-all, .knowledgebase .ui-corner-top, .knowledgebase .ui-corner-left, .knowledgebase .ui-corner-tl {
+   border-top-left-radius: 4px;
+}
+
+.knowledgebase.ui-dialog .ui-dialog-buttonpane {
+   background-image: none;
+   border-width: 1px 0 0;
+   margin: 0.5em 0 0;
+   padding: 0.3em 1em 0.5em 0.4em;
+   text-align: left;
+}

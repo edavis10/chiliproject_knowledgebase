@@ -20,6 +20,7 @@
             width: 850,
             show: "fadeIn",
             hide: "fadeOut",
+            dialogClass: "knowledgebase",
             buttons: {
               "Submit": function() {
                 $('#knowledgebase-form').submit();
