@@ -1,7 +1,7 @@
 (function($) {
   KnowledgeBase = {
     registerAjaxIndicator: function() {
-      $("#ajax-indicator").ajaxStart(function(){ $(this).show();  });
+      $("#ajax-indicator").ajaxStart(function(){ $(this).show().css('z-index', '9999'); });
       $("#ajax-indicator").ajaxStop(function(){ $(this).hide();  });
 
     },
@@ -65,10 +65,17 @@
     },
 
     initialize: function() {
-      this.registerAjaxIndicator();
       this.registerKnowledgeBaseAddLightbox();
       this.registerKnowledgeBaseAddForm();
-    }
+
+      $(document).ready(function() {
+        KnowledgeBase.initializeAfterDomLoaded();
+      });
+    },
+
+    initializeAfterDomLoaded: function() {
+      this.registerAjaxIndicator();
+    },
   };
 
   KnowledgeBase.initialize();
