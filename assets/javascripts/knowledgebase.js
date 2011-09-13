@@ -18,6 +18,8 @@
             title: "Add Knowledge Base Content",
             minWidth: 400,
             width: 850,
+            show: "fadeIn",
+            hide: "fadeOut",
             buttons: {
               "Submit": function() {
                 $('#knowledgebase-form').submit();
